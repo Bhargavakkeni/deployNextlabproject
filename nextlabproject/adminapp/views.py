@@ -40,7 +40,7 @@ def registerAdmin(request):
 
 
 @api_view(['GET', 'POST', 'PUT', 'DELETE'])
-def signOn(request):
+def signOn(request,*args,**kwargs):
     '''
     signOn function uses api_view of the django rest framework to handle api requests related to signOn functionality.
     GET - checks the user login credentials if verified redirects to app function.

@@ -2755,3 +2755,35 @@ IndexError: list index out of range
 2024-01-01 15:24:32,546-[INFO] [MainThread] (autoreload):266 D:\allprojects\deploynextlabproject\nextlabproject\adminapp\views.py changed, reloading.
 2024-01-01 15:24:37,244-[INFO] [MainThread] (autoreload):266 D:\allprojects\deploynextlabproject\nextlabproject\adminapp\views.py changed, reloading.
 2024-01-01 15:25:45,406-[INFO] [MainThread] (autoreload):266 D:\allprojects\deploynextlabproject\nextlabproject\adminapp\views.py changed, reloading.
+2024-01-01 17:45:49,603-[INFO] [Thread-1 (process_request_thread)] (views):52 In signOn GET is triggered.
+2024-01-01 17:45:49,619-[WARNING] [Thread-1 (process_request_thread)] (log):241 Not Found: /home/signOn/admin/admin
+2024-01-01 17:46:15,161-[INFO] [Thread-1 (process_request_thread)] (views):52 In signOn GET is triggered.
+2024-01-01 17:46:15,168-[WARNING] [Thread-1 (process_request_thread)] (log):241 Not Found: /home/signOn/admin/admin
+2024-01-01 17:46:26,805-[WARNING] [Thread-1 (process_request_thread)] (log):241 Not Found: /home/register
+2024-01-01 17:47:39,659-[WARNING] [Thread-5 (process_request_thread)] (log):241 Not Found: /signOn
+2024-01-01 17:48:57,129-[INFO] [MainThread] (autoreload):266 D:\allprojects\deploynextlabproject\nextlabproject\adminapp\urls.py changed, reloading.
+2024-01-01 17:49:06,844-[INFO] [Thread-1 (process_request_thread)] (views):67 In signOn POST is triggered.
+2024-01-01 17:49:10,458-[INFO] [Thread-1 (process_request_thread)] (views):52 In signOn GET is triggered.
+2024-01-01 17:49:10,464-[INFO] [Thread-1 (process_request_thread)] (views):59 Redirecting to app view
+2024-01-01 17:49:10,595-[WARNING] [Thread-1 (process_request_thread)] (log):241 Not Found: /home/app/admin
+2024-01-01 17:49:57,087-[INFO] [MainThread] (autoreload):266 D:\allprojects\deploynextlabproject\nextlabproject\adminapp\urls.py changed, reloading.
+2024-01-01 17:50:07,250-[INFO] [Thread-1 (process_request_thread)] (views):52 In signOn GET is triggered.
+2024-01-01 17:50:07,258-[INFO] [Thread-1 (process_request_thread)] (views):59 Redirecting to app view
+2024-01-01 17:50:07,282-[INFO] [Thread-1 (process_request_thread)] (views):130 username is admin returning admin page.
+2024-01-01 17:50:07,405-[INFO] [Thread-1 (process_request_thread)] (views):130 username is admin returning admin page.
+2024-01-01 17:50:57,211-[WARNING] [Thread-5 (process_request_thread)] (log):241 Not Found: /home/addApps
+2024-01-01 17:51:36,799-[INFO] [MainThread] (autoreload):266 D:\allprojects\deploynextlabproject\nextlabproject\adminapp\urls.py changed, reloading.
+2024-01-01 17:51:43,391-[INFO] [MainThread] (autoreload):266 D:\allprojects\deploynextlabproject\nextlabproject\adminapp\urls.py changed, reloading.
+2024-01-01 17:51:50,529-[INFO] [Thread-1 (process_request_thread)] (views):130 username is admin returning admin page.
+2024-01-01 17:52:06,151-[INFO] [Thread-4 (process_request_thread)] (views):198 Recieved app data in addApps post method.
+2024-01-01 17:52:08,192-[INFO] [Thread-4 (process_request_thread)] (views):130 username is admin returning admin page.
+2024-01-01 17:52:27,536-[INFO] [Thread-9 (process_request_thread)] (views):67 In signOn POST is triggered.
+2024-01-01 17:52:38,298-[INFO] [Thread-12 (process_request_thread)] (views):52 In signOn GET is triggered.
+2024-01-01 17:52:38,298-[INFO] [Thread-12 (process_request_thread)] (views):59 Redirecting to app view
+2024-01-01 17:52:38,354-[INFO] [Thread-12 (process_request_thread)] (views):133 Username is not admin returning user page.
+2024-01-01 17:52:38,354-[INFO] [Thread-12 (process_request_thread)] (views):137 fetching tasks id list.
+2024-01-01 17:52:38,399-[INFO] [Thread-12 (process_request_thread)] (views):133 Username is not admin returning user page.
+2024-01-01 17:52:38,399-[INFO] [Thread-12 (process_request_thread)] (views):137 fetching tasks id list.
+2024-01-01 17:53:04,013-[INFO] [Thread-15 (process_request_thread)] (views):133 Username is not admin returning user page.
+2024-01-01 17:53:04,013-[INFO] [Thread-15 (process_request_thread)] (views):137 fetching tasks id list.
+2024-01-01 17:53:04,020-[INFO] [Thread-15 (process_request_thread)] (views):155 fetched list of tasksIds is <QuerySet [{'tasksId': 42}]>
