@@ -58,7 +58,7 @@
         event.preventDefault();
         const username = document.getElementById('username').value;
         const password = document.getElementById('password').value;
-        fetch(`signOn/${username}/${password}`,{
+        fetch(`../signOn/${username}/${password}`,{
             method: 'GET'
         }).then(response => {
             if(response.status == '404'){
