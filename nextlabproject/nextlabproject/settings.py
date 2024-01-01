@@ -78,11 +78,8 @@ WSGI_APPLICATION = 'nextlabproject.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'nextlabproject',
-        'USER' : 'postgres',
-        'PASSWORD' : 'Bhargav@1105',
-        'HOST' : 'localhost',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
