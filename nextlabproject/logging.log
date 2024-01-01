@@ -2660,3 +2660,61 @@ ValueError: dictionary update sequence element #0 has length 3; 2 is required
 2024-01-01 11:18:24,320-[INFO] [Thread-33 (process_request_thread)] (views):157 fetched list of tasksIds is <QuerySet [{'tasksId': 1}]>
 2024-01-01 11:22:19,364-[INFO] [MainThread] (autoreload):266 C:\Users\ganes\OneDrive\Desktop\NextLabs\webapp\nextlabproject\adminapp\models.py changed, reloading.
 2024-01-01 12:16:25,042-[INFO] [MainThread] (autoreload):266 C:\Users\ganes\OneDrive\Desktop\NextLabs\webapp\nextlabproject\nextlabproject\settings.py changed, reloading.
+2024-01-01 13:04:33,056-[WARNING] [Thread-1 (process_request_thread)] (log):241 Not Found: /home/signOn
+2024-01-01 13:05:23,788-[INFO] [MainThread] (autoreload):266 D:\allprojects\deploynextlabproject\nextlabproject\nextlabproject\settings.py changed, reloading.
+2024-01-01 13:05:29,237-[WARNING] [Thread-1 (process_request_thread)] (log):241 Not Found: /home/signOn
+2024-01-01 13:05:53,588-[INFO] [MainThread] (autoreload):266 D:\allprojects\deploynextlabproject\nextlabproject\adminapp\urls.py changed, reloading.
+2024-01-01 13:05:58,007-[WARNING] [Thread-1 (process_request_thread)] (log):241 Not Found: /home/
+2024-01-01 13:06:02,998-[WARNING] [Thread-1 (process_request_thread)] (log):241 Not Found: /home/
+2024-01-01 13:06:09,056-[INFO] [Thread-3 (process_request_thread)] (views):52 In signOn GET is triggered.
+2024-01-01 13:06:09,075-[INFO] [Thread-3 (process_request_thread)] (views):132 username is admin returning admin page.
+2024-01-01 13:06:41,609-[INFO] [MainThread] (autoreload):266 D:\allprojects\deploynextlabproject\nextlabproject\adminapp\urls.py changed, reloading.
+2024-01-01 13:06:49,252-[INFO] [MainThread] (autoreload):266 D:\allprojects\deploynextlabproject\nextlabproject\nextlabproject\urls.py changed, reloading.
+2024-01-01 13:06:53,483-[INFO] [Thread-1 (process_request_thread)] (views):132 username is admin returning admin page.
+2024-01-01 13:06:58,130-[WARNING] [Thread-4 (process_request_thread)] (log):241 Not Found: /home/
+2024-01-01 13:08:52,103-[INFO] [MainThread] (autoreload):266 D:\allprojects\deploynextlabproject\nextlabproject\adminapp\urls.py changed, reloading.
+2024-01-01 13:09:52,442-[INFO] [Thread-1 (process_request_thread)] (views):132 username is admin returning admin page.
+2024-01-01 13:09:54,200-[ERROR] [Thread-1 (process_request_thread)] (log):241 Internal Server Error: /app/home
+Traceback (most recent call last):
+  File "D:\allprojects\deploynextlabproject\myenv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\allprojects\deploynextlabproject\myenv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\allprojects\deploynextlabproject\nextlabproject\adminapp\views.py", line 131, in app
+    if check[0]['admin'] == True:
+       ~~~~~^^^
+IndexError: list index out of range
+2024-01-01 13:10:40,080-[INFO] [Thread-3 (process_request_thread)] (views):132 username is admin returning admin page.
+2024-01-01 13:10:45,308-[WARNING] [Thread-5 (process_request_thread)] (log):241 Not Found: /home/register
+2024-01-01 13:11:37,829-[WARNING] [Thread-10 (process_request_thread)] (log):241 Not Found: /home/signOn
+2024-01-01 13:12:37,897-[INFO] [Thread-13 (process_request_thread)] (views):52 In signOn GET is triggered.
+2024-01-01 13:12:37,920-[INFO] [Thread-13 (process_request_thread)] (views):132 username is admin returning admin page.
+2024-01-01 13:12:42,711-[INFO] [Thread-15 (process_request_thread)] (views):52 In signOn GET is triggered.
+2024-01-01 13:12:42,720-[INFO] [Thread-15 (process_request_thread)] (views):135 Username is not admin returning user page.
+2024-01-01 13:12:42,720-[INFO] [Thread-15 (process_request_thread)] (views):139 fetching tasks id list.
+2024-01-01 13:12:42,729-[INFO] [Thread-15 (process_request_thread)] (views):157 fetched list of tasksIds is <QuerySet [{'tasksId': 2}, {'tasksId': 1}, {'tasksId': 3}, {'tasksId': 5}, {'tasksId': 15}, {'tasksId': 6}]>
+2024-01-01 13:12:56,164-[INFO] [Thread-18 (process_request_thread)] (views):52 In signOn GET is triggered.
+2024-01-01 13:12:56,191-[INFO] [Thread-18 (process_request_thread)] (views):132 username is admin returning admin page.
+2024-01-01 13:13:05,812-[WARNING] [Thread-21 (process_request_thread)] (log):241 Not Found: /home/registeradmin
+2024-01-01 13:13:25,723-[INFO] [MainThread] (autoreload):266 D:\allprojects\deploynextlabproject\nextlabproject\adminapp\urls.py changed, reloading.
+2024-01-01 13:13:37,039-[WARNING] [Thread-4 (process_request_thread)] (log):241 Not Found: /home/signOn
+2024-01-01 13:14:04,577-[WARNING] [Thread-7 (process_request_thread)] (log):241 Not Found: /home/signOn
+2024-01-01 13:14:10,710-[WARNING] [Thread-7 (process_request_thread)] (log):241 Not Found: /home/signOn
+2024-01-01 13:14:35,670-[INFO] [Thread-10 (process_request_thread)] (views):69 In signOn POST is triggered.
+2024-01-01 13:14:44,560-[INFO] [Thread-12 (process_request_thread)] (views):69 In signOn POST is triggered.
+2024-01-01 13:14:49,553-[INFO] [Thread-12 (process_request_thread)] (views):52 In signOn GET is triggered.
+2024-01-01 13:14:49,583-[INFO] [Thread-12 (process_request_thread)] (views):132 username is admin returning admin page.
+2024-01-01 13:15:45,529-[INFO] [Thread-15 (process_request_thread)] (views):200 Recieved app data in addApps post method.
+2024-01-01 13:15:47,663-[INFO] [Thread-15 (process_request_thread)] (views):132 username is admin returning admin page.
+2024-01-01 13:15:47,727-[WARNING] [Thread-15 (process_request_thread)] (log):241 Not Found: /media/images/editing_bWviCbA.jpeg
+2024-01-01 13:17:16,624-[INFO] [Thread-17 (process_request_thread)] (views):132 username is admin returning admin page.
+2024-01-01 13:17:16,741-[WARNING] [Thread-17 (process_request_thread)] (log):241 Not Found: /media/images/th_m5DYmii.jpeg
+2024-01-01 13:17:16,765-[WARNING] [Thread-18 (process_request_thread)] (log):241 Not Found: /media/images/facebook_ZJiWtWt.jpeg
+2024-01-01 13:17:16,789-[WARNING] [Thread-17 (process_request_thread)] (log):241 Not Found: /media/images/editing_bWviCbA.jpeg
+2024-01-01 13:17:24,389-[INFO] [Thread-20 (process_request_thread)] (views):132 username is admin returning admin page.
+2024-01-01 13:17:24,468-[WARNING] [Thread-21 (process_request_thread)] (log):241 Not Found: /media/images/facebook_ZJiWtWt.jpeg
+2024-01-01 13:17:24,484-[WARNING] [Thread-20 (process_request_thread)] (log):241 Not Found: /media/images/th_m5DYmii.jpeg
+2024-01-01 13:17:24,540-[WARNING] [Thread-21 (process_request_thread)] (log):241 Not Found: /media/images/editing_bWviCbA.jpeg
+2024-01-01 13:18:37,488-[INFO] [MainThread] (autoreload):266 D:\allprojects\deploynextlabproject\nextlabproject\adminapp\urls.py changed, reloading.
