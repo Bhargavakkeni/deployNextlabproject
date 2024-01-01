@@ -2726,3 +2726,9 @@ IndexError: list index out of range
 2024-01-01 13:19:15,835-[INFO] [Thread-7 (process_request_thread)] (views):135 Username is not admin returning user page.
 2024-01-01 13:19:15,837-[INFO] [Thread-7 (process_request_thread)] (views):139 fetching tasks id list.
 2024-01-01 13:19:15,841-[INFO] [Thread-7 (process_request_thread)] (views):157 fetched list of tasksIds is <QuerySet [{'tasksId': 2}, {'tasksId': 1}, {'tasksId': 3}, {'tasksId': 5}, {'tasksId': 15}, {'tasksId': 6}, {'tasksId': 40}]>
+2024-01-01 13:27:41,280-[INFO] [Thread-13 (process_request_thread)] (views):52 In signOn GET is triggered.
+2024-01-01 13:27:41,296-[INFO] [Thread-13 (process_request_thread)] (views):132 username is admin returning admin page.
+2024-01-01 13:28:11,480-[INFO] [Thread-16 (process_request_thread)] (views):200 Recieved app data in addApps post method.
+2024-01-01 13:28:13,247-[INFO] [Thread-16 (process_request_thread)] (views):132 username is admin returning admin page.
+2024-01-01 13:40:34,941-[INFO] [Thread-18 (process_request_thread)] (views):52 In signOn GET is triggered.
+2024-01-01 13:40:34,964-[INFO] [Thread-18 (process_request_thread)] (views):132 username is admin returning admin page.
