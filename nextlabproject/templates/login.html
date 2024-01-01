@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block title %}Login{% endblock %}
+
+{% block style %}
+
+<style>
+
+    .card {
+        margin: 25px auto;
+        width: 50%;
+    }
+
+    #login {
+        margin: 15px auto;
+        width: 50%;
+        color: white;
+    }
+
+</style>
+
+{% endblock %}
+
+{% block body %}
+
+<div class="container">
+
+    <div class="row card shadow-lg p-3 mb-5 bg-body-tertiary rounded">
+
+        <div class="col card-title">
+            <h3>Login Page</h3>
+        </div>
+
+        <div class="col">
+            <form method="GET" action="signOn">
+                <label for="username">
+                    Username
+                </label>
+                <input type="text" id="username" class="form-control" name="username" required>
+                <label for="password">
+                    Password
+                </label>
+                <input type="password" id="password" class="form-control" name="password" required>
+                <input type="submit" id="login" class="form-control bg-primary" value="Login">
+            </form>
+            <p>New User?<a href="register"> Register</a></p>
+            {% if error %}
+            <script>alert('Please try agian');</script>
+            {% endif %}
+        </div>
+
+        
+    </div>
+
+</div>
+
+{% endblock %}

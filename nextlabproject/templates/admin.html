@@ -1,0 +1,363 @@
+{% extends "base.html" %}
+
+{% block title %}Admin{% endblock %}
+
+{% block style %}
+
+<style>
+    h2 {
+        text-align: center;
+        background-color: whitesmoke;
+    }
+
+    body {
+        background-color: gainsboro;
+    }
+
+    ul {
+        list-style-type: none;
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    li {
+        display: inline-block;
+        padding: 2px;
+        width: 99px;
+    }
+
+    li a {
+        width: 80%;
+    }
+
+    #dropArea {
+        width: 300px;
+        height: 200px;
+        border: 2px dashed #ccc;
+        border-radius: 8px;
+        text-align: center;
+        padding: 20px;
+        margin: 20px auto;
+        cursor: pointer;
+    }
+
+    table {
+        border-collapse: collapse;
+        margin: 50px auto;
+        width: 80%;
+    }
+
+    input {
+        width: 80%;
+    }
+
+    tr {
+        margin-bottom: 10px;
+    }
+
+    td {
+        padding: 21px;
+    }
+
+    .center {
+        margin: auto;
+        width: 50%;
+        text-align: center;
+        font-size: large;
+    }
+
+    #home {
+        display: block;
+        background-color: whitesmoke;
+        height: 583px;
+        overflow: auto;
+    }
+
+    #addApp {
+        display: none;
+    }
+
+    img {
+        width: 45px;
+    }
+
+    .details {
+        margin: 28px auto;
+        display: flex;
+        flex-direction: row;
+        padding: 11px;
+        background-color: lightgrey;
+    }
+
+    .imgHeight {
+        height: -webkit-fill-available;
+    }
+
+    span.right {
+        float: right;
+        width: 50%;
+        padding: 8px;
+        margin: 10px;
+        text-align: center;
+    }
+
+    #delete {
+        cursor: pointer;
+
+    }
+
+    img#icons {
+        max-width: 100%;
+        max-height: 100%;
+        width: unset;
+    }
+
+    @media screen and (min-width: 750px) {
+        li {
+            margin: 15px;
+            width: 100%;
+        }
+    }
+</style>
+
+{% endblock %}
+
+{% block body %}
+
+<div class="container-fluid">
+
+    <div class="row">
+        <h2>Hello {{username}}</h2>
+    </div>
+
+    <div class="row" style="margin-top: 20px;">
+        <div class="col-md-2">
+            <ul>
+                <li>
+                    <a href="#home" class="btn btn-info" onclick="handleHome()">Home</a>
+                </li>
+                <li>
+                    <a href="#addApp" class="btn btn-primary" onclick="reset()">Add Apps</a>
+                </li>
+                <li>
+                    <a href="/home" class="btn btn-danger">Logout</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="col-md-8" id="home">
+            <div class="row" style="color: cadetblue; text-align: center; font-size: xx-large;">
+                <p style="margin: 0;">Added Apps</p>
+            </div>
+            {% for appdetail in appDetails %}
+            <div class="row details rounded border">
+                <div class="col-md-2 imgHeight">
+                    <img src="/media/{{ appdetail.icons }}" alt="{{appdetail.appName}}">
+                </div>
+                <div class="col-md-6">
+                    <p style="margin: 0;"><span style="font-size: 25px;">{{appdetail.appName}}</span>
+                        <br>
+                        <a href="{{appdetail.appLink}}" style="font-size: small;">{{appdetail.appLink}}</a>
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <span class="btn bg-danger right" style="width: 65px;">
+                        <a onclick="handleDelete(event,`{{appdetail.id}}`)" title="delete app details" id="delete">
+                            Delete
+                        </a>
+                    </span>
+                    <span class="border rounded bg-success right">{{appdetail.points}} Points</span>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="col-md-8" style="background-color: whitesmoke; height: 583px;" id="addApp">
+            <form method="POST" id="addForm" action="../addApps" enctype="multipart/form-data"
+                onsubmit="submitForm(event)">
+                {% csrf_token %}
+                <div id="dropArea" ondragover="allowDrop(event)" ondrop="handleDrop(event)">
+                    <p>Drap and drop app icon here or click to select app icon.</p>
+                    <input type="file" id="icons" name="icons" accept=".jpg, .jpeg, .png" style="display: none;"
+                        onchange="handleFileSelect(event)">
+                </div>
+                <div class="col">
+                    <table>
+                        <tr>
+                            <td><input type="text" id="appName" class="form-control" name="appName"
+                                    placeholder="App Name" required></td>
+                            <td><input type="text" id="appLink" class="form-control" name="appLink"
+                                    placeholder="App Link" required></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" list="options" class="form-control" id="category" name="category"
+                                    placeholder="select a category" required>
+                                <datalist id="options">
+                                    <option value="Entertainment"></option>
+                                    <option value="Arts & Design"></option>
+                                    <option value="Augmented Reality"></option>
+                                    <option value="Comics"></option>
+                                    <option value="Music & Audio"></option>
+                                </datalist>
+                            </td>
+                            <td><input type="text" list="suboptions" class="form-control" id="subCategory"
+                                    name="subCategory" placeholder="select a sub category" required>
+                                <datalist id="suboptions">
+                                    <option value=""></option>
+                                </datalist>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><input type="number" id="points" name="points"
+                                    class="form-control center bg-success" placeholder="Add Points" required></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"> <input type="submit" id="submit" class="form-control bg-warning center">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    var formData = new FormData(document.getElementById('addForm'));
+
+    function handleDelete(event, id) {
+        event.preventDefault();
+        const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+        fetch(`../addApps/${id}`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRFToken': csrftoken,
+            }
+        }).then(response => {
+            if (response.ok) {
+                alert('Success');
+                window.location.reload();
+            } else {
+                alert('Please try again');
+            }
+        }).catch(error => console.log('Error', error));
+    }
+
+    function submitForm(event) {
+        event.preventDefault();
+
+        formData.set('appName', document.getElementById('appName').value);
+        formData.set('appLink', document.getElementById('appLink').value);
+        formData.set('category', document.getElementById('category').value);
+        formData.set('subCategory', document.getElementById('subCategory').value);
+        formData.set('points', document.getElementById('points').value);
+
+        console.log('formData', formData);
+        fetch('../addApps', {
+            method: 'POST',
+            body: formData,
+        }).then(response => {
+            if (response.ok) {
+                alert('Success');
+                window.location.reload();
+            } else {
+                alert('Please try again');
+            }
+        }).catch(error => console.error('Error', error));
+    }
+
+    function handleHome() {
+        document.getElementById('home').style.display = 'block';
+        document.getElementById('addApp').style.display = 'none';
+        //window.location.reload();
+    }
+
+    function reset() {
+        document.getElementById('home').style.display = 'none';
+        document.getElementById('addApp').style.display = 'block';
+        form = document.getElementById('addForm');
+        form.reset();
+    }
+
+    function subCategory() {
+
+        var subcategory = document.getElementById('category').value;
+        console.log('subCategory', subcategory);
+        var opt = document.getElementById('suboptions');
+        opt.innerHTML = '';
+        var options = [];
+
+        if (subcategory == 'Entertainment') {
+            options = ['social media', 'OTT'];
+        } else if (subcategory == 'Arts & Design') {
+            options = ['video editor', 'photo editor', 'painting', 'graphics'];
+        } else if (subcategory == 'Augmented Reality') {
+            options = ['games', 'design'];
+        } else if (subcategory == 'Comics') {
+            options = ['manhua', 'manhwa', 'manga'];
+        } else if (subcategory == 'Music & Audio') {
+            options = ['radio', 'music', 'videos'];
+        }
+
+        for (var i = 0; i < options.length; i++) {
+            var option = document.createElement('option');
+            option.value = options[i];
+            opt.appendChild(option);
+        }
+    }
+
+    document.getElementById('category').addEventListener('change', subCategory);
+
+    function allowDrop(event) {
+        event.preventDefault();
+        var dropArea = document.getElementById('dropArea');
+        dropArea.style.border = '2px dashed #aaa';
+    }
+
+    function handleDrop(event) {
+        event.preventDefault();
+        var dropArea = document.getElementById('dropArea');
+        dropArea.style.border = '2px dashed #ccc';
+        var files = event.dataTransfer.files;
+        handleFiles(files);
+    }
+
+    function handleFileSelect(event) {
+        var files = event.target.files;
+        handleFiles(files);
+    }
+
+    function handleFiles(files) {
+        console.log('handleFiles called');
+        var dropArea = document.getElementById('dropArea');
+        dropArea.innerHTML = '';
+
+        //Iterate through the selected files. Creates new image element img and adds it to div dropArea.
+        for (var i = 0; i < files.length; i++) {
+            var file = files[i];
+            if (file.type.match('image/jpeg') || file.type.match('image/png')) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    var img = new Image();
+                    img.src = e.target.result;
+                    img.id = 'icons';
+                    dropArea.appendChild(img);
+                };
+                formData.set('icons', file, file.name);
+                reader.readAsDataURL(file);
+            } else {
+                alert('Please upload only .jpg, .jpeg or .png files.');
+            }
+        }
+    }
+
+    document.getElementById('dropArea').addEventListener('click', function () {
+        document.getElementById('icons').click();
+    });
+
+</script>
+
+{% endblock %}

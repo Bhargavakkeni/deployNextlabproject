@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Admin App views &#8212; nextlabproject  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=039e1c02" />
+    <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="&lt;no title&gt;" href="models.html" />
+    <link rel="prev" title="Admin App urls" href="urls.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="module-adminapp.views">
+<span id="admin-app-views"></span><h1>Admin App views<a class="headerlink" href="#module-adminapp.views" title="Link to this heading">¶</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="adminapp.views.addApps">
+<span class="sig-prename descclassname"><span class="pre">adminapp.views.</span></span><span class="sig-name descname"><span class="pre">addApps</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#adminapp.views.addApps" title="Link to this definition">¶</a></dt>
+<dd><p>addApps function uses api_view of the django rest framework to handle api requests related to Apps functionality.
+GET - returns deatils of apps in json format.
+POST - stores app details into AppDetails data base.
+DELETE - deletes app details based on id found in url.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="adminapp.views.app">
+<span class="sig-prename descclassname"><span class="pre">adminapp.views.</span></span><span class="sig-name descname"><span class="pre">app</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#adminapp.views.app" title="Link to this definition">¶</a></dt>
+<dd><p>app function is to render page view based on user. If admin render admin template else render user template.
+Returns mydict(type dictionary) as context. It contains username(string), appDetails(list of dictionaries) as common for admin and user.
+Additionaly for user it contains remainingTasks(int), results(dict)</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="adminapp.views.index">
+<span class="sig-prename descclassname"><span class="pre">adminapp.views.</span></span><span class="sig-name descname"><span class="pre">index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#adminapp.views.index" title="Link to this definition">¶</a></dt>
+<dd><p>index function returns login page.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="adminapp.views.register">
+<span class="sig-prename descclassname"><span class="pre">adminapp.views.</span></span><span class="sig-name descname"><span class="pre">register</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#adminapp.views.register" title="Link to this definition">¶</a></dt>
+<dd><p>register fuction returns register page.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="adminapp.views.registerAdmin">
+<span class="sig-prename descclassname"><span class="pre">adminapp.views.</span></span><span class="sig-name descname"><span class="pre">registerAdmin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#adminapp.views.registerAdmin" title="Link to this definition">¶</a></dt>
+<dd><p>registerAdmin function returns page for admin registration</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="adminapp.views.saveTasks">
+<span class="sig-prename descclassname"><span class="pre">adminapp.views.</span></span><span class="sig-name descname"><span class="pre">saveTasks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#adminapp.views.saveTasks" title="Link to this definition">¶</a></dt>
+<dd><p>saveTasks function uses api_view of the django rest framework to handle api requests related to tasks functionality.
+GET - Send details related to the tasks completed by user.
+POST - Stores tasks completion details to TasksDetails database.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="adminapp.views.signOn">
+<span class="sig-prename descclassname"><span class="pre">adminapp.views.</span></span><span class="sig-name descname"><span class="pre">signOn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#adminapp.views.signOn" title="Link to this definition">¶</a></dt>
+<dd><p>signOn function uses api_view of the django rest framework to handle api requests related to signOn functionality.
+GET - checks the user login credentials if verified redirects to app function.
+POST - Stores the user login credentioal to LoginDetails database.
+It returns mydict(type dictionary) as context containing either verify or error key.</p>
+</dd></dl>
+
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">nextlabproject</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="urls.html">Admin App urls</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Admin App views</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#adminapp.views.addApps"><code class="docutils literal notranslate"><span class="pre">addApps()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#adminapp.views.app"><code class="docutils literal notranslate"><span class="pre">app()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#adminapp.views.index"><code class="docutils literal notranslate"><span class="pre">index()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#adminapp.views.register"><code class="docutils literal notranslate"><span class="pre">register()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#adminapp.views.registerAdmin"><code class="docutils literal notranslate"><span class="pre">registerAdmin()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#adminapp.views.saveTasks"><code class="docutils literal notranslate"><span class="pre">saveTasks()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#adminapp.views.signOn"><code class="docutils literal notranslate"><span class="pre">signOn()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="models.html"><code class="docutils literal notranslate"><span class="pre">AppDetails</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="models.html#adminapp.models.LoginDetails"><code class="docutils literal notranslate"><span class="pre">LoginDetails</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="models.html#adminapp.models.TaskDetails"><code class="docutils literal notranslate"><span class="pre">TaskDetails</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="serializers.html"><code class="docutils literal notranslate"><span class="pre">AppDetailsSerializer</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="serializers.html#adminapp.serializers.LoginSerializer"><code class="docutils literal notranslate"><span class="pre">LoginSerializer</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="serializers.html#adminapp.serializers.TaskDetailsSerializer"><code class="docutils literal notranslate"><span class="pre">TaskDetailsSerializer</span></code></a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="urls.html" title="previous chapter">Admin App urls</a></li>
+      <li>Next: <a href="models.html" title="next chapter">&lt;no title&gt;</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2023, Bhargav.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+      |
+      <a href="../_sources/adminapp/views.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

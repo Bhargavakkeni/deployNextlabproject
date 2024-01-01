@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Admin App models &#8212; nextlabproject  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=039e1c02" />
+    <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Admin App serializers" href="serializers.html" />
+    <link rel="prev" title="Admin App views" href="views.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="module-adminapp.models">
+<span id="admin-app-models"></span><h1>Admin App models<a class="headerlink" href="#module-adminapp.models" title="Link to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="adminapp.models.AppDetails">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">adminapp.models.</span></span><span class="sig-name descname"><span class="pre">AppDetails</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#adminapp.models.AppDetails" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></p>
+<p>AppDetails model is used to store app details that are being added by admin user.
+It contains 7 fields id(PK), icons, appName, appLink, category, subCategory, points.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="adminapp.models.LoginDetails">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">adminapp.models.</span></span><span class="sig-name descname"><span class="pre">LoginDetails</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#adminapp.models.LoginDetails" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></p>
+<p>LoginDetails model is used to store user login details including admin and enduser.
+It contains two fields username and password. Here ‘username’ is used as Primary Key.
+It is in a one to many relationship in a TaskDetails model.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="adminapp.models.TaskDetails">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">adminapp.models.</span></span><span class="sig-name descname"><span class="pre">TaskDetails</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#adminapp.models.TaskDetails" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></p>
+<p>TaskDetails model is used to store user completed completed task details.
+It contains four fields id(PK), username(ForeignKey), tasksId, points, screenShot.
+It is in a many to one relationship with LoginDetails model.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="adminapp.models.TaskDetails.username">
+<span class="sig-name descname"><span class="pre">username</span></span><a class="headerlink" href="#adminapp.models.TaskDetails.username" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#adminapp.models.LoginDetails" title="adminapp.models.LoginDetails"><code class="xref py py-class docutils literal notranslate"><span class="pre">LoginDetails</span></code></a></p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">nextlabproject</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="urls.html">Admin App urls</a></li>
+<li class="toctree-l1"><a class="reference internal" href="views.html">Admin App views</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Admin App models</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#adminapp.models.AppDetails"><code class="docutils literal notranslate"><span class="pre">AppDetails</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#adminapp.models.LoginDetails"><code class="docutils literal notranslate"><span class="pre">LoginDetails</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#adminapp.models.TaskDetails"><code class="docutils literal notranslate"><span class="pre">TaskDetails</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="serializers.html">Admin App serializers</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="views.html" title="previous chapter">Admin App views</a></li>
+      <li>Next: <a href="serializers.html" title="next chapter">Admin App serializers</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2023, Bhargav.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+      |
+      <a href="../_sources/adminapp/models.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

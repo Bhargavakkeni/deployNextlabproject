@@ -1,0 +1,25 @@
+.. nextlabproject documentation master file, created by
+   sphinx-quickstart on Sat Dec 30 17:05:05 2023.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+Welcome to nextlabproject's documentation!
+==========================================
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+   
+   
+   adminapp/views
+   adminapp/models
+   adminapp/serializers
+   
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`

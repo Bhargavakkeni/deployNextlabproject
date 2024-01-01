@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block title %}Resgister{% endblock %}
+{% block style %}
+
+<style>
+    .card {
+        margin: 25px auto;
+        width: 50%;
+    }
+
+    #register {
+        margin: 15px auto;
+        width: 50%;
+        color: white;
+    }
+</style>
+
+{% endblock %}
+{% block body %}
+<div class="container">
+    <div class="row card shadow-lg p-3 mb-5 bg-body-tertiary rounded">
+        <div class="col card-title">
+            <h3>Registeration Page</h3>
+        </div>
+        <div class="col card-body">
+            <form method="POST" action="signOn">
+                {% csrf_token %}
+                <label for="username">
+                    Username
+                </label>
+                <input type="text" id="username" class="form-control" name="username" required>
+                <label for="password">
+                    Password
+                </label>
+                <input type="password" id="password" class="form-control" name="password" required>
+                <input type="submit" id="register" class="form-control bg-primary" value="Register">
+            </form>
+            {% if verify %}
+            <script>
+                alert('Registered successfuly');
+                window.open('/home', '_self');
+            </script>
+            {% endif %}
+            {% if error %}
+            <script>alert('Please try agian');</script>
+            {% endif %}
+            {% if exist %}
+            <script>alert('User already existed.');</script>
+            {% endif %}
+        </div>
+        <p>Already registered?<span><a href="/home"> Login here</a></span></p>
+    </div>
+</div>
+{% endblock %}

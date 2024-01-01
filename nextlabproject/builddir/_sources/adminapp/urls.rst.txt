@@ -1,0 +1,6 @@
+Admin App urls
+===============
+.. automodule:: adminapp.urls
+    :members:
+    :undoc-members:
+    :show-inheritance:
