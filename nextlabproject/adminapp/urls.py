@@ -18,7 +18,7 @@ urlpatterns = [
     path('',views.index),
     path('home/',views.index,name='home'),
     path('signOn',views.signOn,name='register'),
-    path('home/signOn/<str:username>/<str:password>', views.signOn, name='signOn'),
+    path('signOn/<str:username>/<str:password>', views.signOn, name='signOn'),
     path('home/app/<str:username>', views.app, name='adminhome'),
     path('register', views.register,name='register'),
     path('home/registeradmin', views.registerAdmin, name= 'adminRegistration'),

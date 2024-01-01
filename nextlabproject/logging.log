@@ -2787,3 +2787,4 @@ IndexError: list index out of range
 2024-01-01 17:53:04,013-[INFO] [Thread-15 (process_request_thread)] (views):133 Username is not admin returning user page.
 2024-01-01 17:53:04,013-[INFO] [Thread-15 (process_request_thread)] (views):137 fetching tasks id list.
 2024-01-01 17:53:04,020-[INFO] [Thread-15 (process_request_thread)] (views):155 fetched list of tasksIds is <QuerySet [{'tasksId': 42}]>
+2024-01-01 17:56:58,224-[INFO] [MainThread] (autoreload):266 D:\allprojects\deploynextlabproject\nextlabproject\adminapp\urls.py changed, reloading.
