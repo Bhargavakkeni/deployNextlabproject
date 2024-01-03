@@ -2788,3 +2788,25 @@ IndexError: list index out of range
 2024-01-01 17:53:04,013-[INFO] [Thread-15 (process_request_thread)] (views):137 fetching tasks id list.
 2024-01-01 17:53:04,020-[INFO] [Thread-15 (process_request_thread)] (views):155 fetched list of tasksIds is <QuerySet [{'tasksId': 42}]>
 2024-01-01 17:56:58,224-[INFO] [MainThread] (autoreload):266 D:\allprojects\deploynextlabproject\nextlabproject\adminapp\urls.py changed, reloading.
+2024-01-01 18:38:39,595-[INFO] [Thread-4 (process_request_thread)] (views):52 In signOn GET is triggered.
+2024-01-01 18:38:39,608-[INFO] [Thread-4 (process_request_thread)] (views):59 Redirecting to app view
+2024-01-01 18:38:39,618-[INFO] [Thread-4 (process_request_thread)] (views):130 username is admin returning admin page.
+2024-01-01 18:38:39,654-[INFO] [Thread-4 (process_request_thread)] (views):130 username is admin returning admin page.
+2024-01-01 18:39:25,895-[INFO] [Thread-7 (process_request_thread)] (views):198 Recieved app data in addApps post method.
+2024-01-01 18:39:27,836-[INFO] [Thread-7 (process_request_thread)] (views):130 username is admin returning admin page.
+2024-01-01 18:39:43,566-[INFO] [Thread-9 (process_request_thread)] (views):52 In signOn GET is triggered.
+2024-01-01 18:39:43,570-[INFO] [Thread-9 (process_request_thread)] (views):59 Redirecting to app view
+2024-01-01 18:39:43,579-[INFO] [Thread-9 (process_request_thread)] (views):133 Username is not admin returning user page.
+2024-01-01 18:39:43,580-[INFO] [Thread-9 (process_request_thread)] (views):137 fetching tasks id list.
+2024-01-01 18:39:43,594-[INFO] [Thread-9 (process_request_thread)] (views):155 fetched list of tasksIds is <QuerySet [{'tasksId': 42}]>
+2024-01-01 18:39:43,620-[INFO] [Thread-9 (process_request_thread)] (views):133 Username is not admin returning user page.
+2024-01-01 18:39:43,621-[INFO] [Thread-9 (process_request_thread)] (views):137 fetching tasks id list.
+2024-01-01 18:39:43,625-[INFO] [Thread-9 (process_request_thread)] (views):155 fetched list of tasksIds is <QuerySet [{'tasksId': 42}]>
+2024-01-01 18:40:09,504-[INFO] [Thread-12 (process_request_thread)] (views):133 Username is not admin returning user page.
+2024-01-01 18:40:09,505-[INFO] [Thread-12 (process_request_thread)] (views):137 fetching tasks id list.
+2024-01-01 18:40:09,508-[INFO] [Thread-12 (process_request_thread)] (views):155 fetched list of tasksIds is <QuerySet [{'tasksId': 42}, {'tasksId': 43}]>
+2024-01-01 18:40:45,154-[INFO] [Thread-20 (process_request_thread)] (views):67 In signOn POST is triggered.
+2024-01-01 18:40:49,732-[INFO] [Thread-23 (process_request_thread)] (views):52 In signOn GET is triggered.
+2024-01-01 18:40:49,736-[INFO] [Thread-23 (process_request_thread)] (views):59 Redirecting to app view
+2024-01-01 18:40:49,744-[INFO] [Thread-23 (process_request_thread)] (views):130 username is admin returning admin page.
+2024-01-01 18:40:49,780-[INFO] [Thread-23 (process_request_thread)] (views):130 username is admin returning admin page.

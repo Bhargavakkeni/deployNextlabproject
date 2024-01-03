@@ -148,7 +148,7 @@ def app(request, *args, **kwargs):
             logging.debug('Error occured while fetching user task Details {}'.format(e))
             return render(request, 'user.html', {'error':True})
         
-        mydict['remainingTasks'] = len(appDetails) - results['tasksCompleted']
+        #mydict['remainingTasks'] = len(appDetails) - results['tasksCompleted']
         
         #This block is to return tasks(appDetails) that are not completed by user.
         if tasksIdList:
@@ -159,7 +159,7 @@ def app(request, *args, **kwargs):
                     if taskId['tasksId'] == appDetail['id']:
                         appDetails.remove(appDetail)
             mydict['appDetails'] = appDetails
-
+        mydict['remainingTasks'] = len(appDetails)
         if results['totalPoints']:
             mydict['results'] = results
         else:
